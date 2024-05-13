@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+
+
+
+    <!-- Aktualności Sekcja Początek -->
+	<div class="section-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title text-center primary-color mb-md-3 mrb-sm-30">
+                            <h5 class="title">Aktualności</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+		<div class="container">
+			<div class="row">
+				<div>
+					<div class="row">
+                        {% for record in records_aktualnosci %}
+						<div class="col-lg-4">
+                                <div class="blog-item style1">
+                                    <div class="blog-img">
+                                        <ul class="post-categories">
+                                            <li></li>
+                                        </ul>
+                                    </div>
+                                    <div class="blog-content">
+                                        <h3 class="blog-title">{{ record.tytul }}</h3>
+                                        <div class="blog-meta">
+                                              <ul class="btm-cate">
+                                                <li>
+                                                    <div class="author">
+                                                        <i class="fas fa-user"></i> {{ record.user }}
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="blog-date">
+                                                        <i class="fas fa-calendar"></i> {{ record.data_utworzenia }}
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="blog-desc">
+
+                                        </div>
+                                        <div class="blog-button">
+                                            <a class="blog-btn" href="{% url 'aktualnosci_details' record.id %}">Czytaj więcej...</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+<br>
+                        </div>{% endfor %}
+
+					</div>
+                    <br><br>
+                    <div class="row">
+						<div class="col-xl-12">
+							<nav class="pagination-nav pdt-30">
+								<ul class="pagination-list">
+									<li class="pagination-left-arrow"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+									<li class="active"><a href="#" class="page-numbers">1</a></li>
+									<li><a href="#" class="page-numbers">2</a></li>
+									<li ><a href="#" class="page-numbers">3</a></li>
+									<li class="pagination-right-arrow"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    <br><br>
+<!-- Aktualności Sekcja Koniec -->
+
+
+    {% include "footer.html" %}
+{% endblock %}

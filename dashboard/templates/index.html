@@ -1,0 +1,22 @@
+{#{% extends "base.html" %}#}
+{% load static %}
+{% block content %}
+<style>
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 30%;
+}
+    </style>
+    <body>
+    <br><br>
+    <div class="container">
+    <div class="text-center">
+        <a href="{% url "dashboard" %}">
+        <img src="{% static 'img/zw_logo.jpg' %}" class="center"></a>
+    </div>
+        </div>
+    </body>
+{% endblock %}

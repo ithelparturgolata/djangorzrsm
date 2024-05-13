@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+
+    <!-- SEKCJA BANER POCZĄTEK -->
+    <section class="baner" id="baner">
+        <div class="slider-area banner-inner-right">
+            <div class="slider-active">
+                <div class="slider-wrapper vh d-flex" style="background-image:url({% static "img/slider/01.JPG)" %}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Regionalny Związek</h3>
+                                <h3>Spółdzielni Mieszkaniowych</h3>
+                                <h3>w Bydgoszczy</h3>
+                                <div class="slider-btn">
+                                    {#                                    <div class="mp-button btn-color-1 scroll-to">#}
+                                    {#                                        <a href="#demos" class="scroll-click">Zadzwoń</a>#}
+                                    {#                                    </div>#}
+                                    {#                                    <div class="mp-button btn-color-2">#}
+                                    {#                                        <a href="#" target="_blank">Napisz</a>#}
+                                    {#                                    </div>#}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SEKCJA BANER KONIEC -->
+
+    <!-- SEKCJA AKTUALNOSCI POCZĄTEK -->
+    <section class="blog-single-section section-padding-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="heading">AKTUALNOŚCI<span></span></h4>
+                </div>
+                <div class="col-md-6 text-right">
+                    <div class="button-one">
+                        <a href="{% url "dashboard" %}" class="bpack-btn">Powrót</a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col col-md-9">
+                    <div class="blog-details-content">
+                        <div class="post">
+                            {% if news.grafika %}
+                                <div class="entry-media">
+                                    <img src="{{ news.grafika.url }}" alt="Image">
+                                </div>
+                            {% else %}
+                                <p>Brak obrazu</p>
+                            {% endif %}
+                            <div class="entry-title-meta">
+                                <h3>{{ news.tytul }}</h3>
+                                <ul class="entry-meta">
+                                    <li>Data dodania: {{ news.data_utworzenia }}</li>
+                                    <li>Autor: {{ user.username }}</li>
+                                </ul>
+                            </div>
+                            <div class="entry-body">
+                                {{ news.opis }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SEKCJA AKTUALNOSCI KONIEC -->
+
+    <!-- SEKCJA STOPKA POCZĄTEK -->
+    <section class="stopka" id="stopka">
+        <footer class="footer-top-area-7 pt-80 pb-45">
+
+            <div class="copyright-info-7">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-12 col-sm-12 text-center">
+                            <p>2024 &copy; Wszelkie prawa zastrzeżone <a href="http://golata.eu">IT HELP</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!-- SEKCJA STOPKA KONIEC -->
+
+{% endblock %}

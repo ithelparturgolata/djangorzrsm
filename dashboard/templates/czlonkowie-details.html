@@ -1,0 +1,139 @@
+{% extends 'base-details-czlonkowie.html' %}
+{% block content %}
+    {% load static %}
+    {% if czlonkowie_details.baner %}
+        <img src="{{ czlonkowie_details.baner.url }}" alt="">
+    {% else %}
+        <div class="footer-logo"><img src="{% static "img/image.svg" %}" alt="">Brak obrazu</div>
+    {% endif %}
+    <div class="image-card-area bg-img-card">
+        <div class="image-card-warp">
+            <div class="image-card-ten">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="heading">{{ czlonkowie_details.nazwa }}<span></span></h4>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <div class="button-one">
+                                <a href="{% url "dashboard" %}" class="bpack-btn">Powrót</a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <footer class="site-footer">
+                <div class="upper-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12">
+                                <div class="about-widget">
+                                    <div class="footer-logo">
+                                        {% if czlonkowie_details.logo %}
+                                            <img src="{{ czlonkowie_details.logo.url }}" alt="">
+                                        {% else %}
+                                            <div class="footer-logo"><img src="{% static "img/image.svg" %}" alt="">Brak
+                                                logo
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <p><b>{{ czlonkowie_details.nazwa }}</b></p>
+                                    <ul class="contact-info">
+                                        <li><img src="{% static "img/phone.svg" %}"
+                                                 alt=""> {{ czlonkowie_details.telefon }}</li>
+                                        <li><img src="{% static "img/flag.svg" %}"
+                                                 alt=""> {{ czlonkowie_details.ulica }}</li>
+                                        <li><img src="{% static "img/home.svg" %}"
+                                                 alt=""> {{ czlonkowie_details.kod }}, {{ czlonkowie_details.miasto }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12">
+                                <div class="widget recent-post-widget">
+                                    <h3>Social Media:</h3>
+                                    <ul class="contact-info">
+                                        <li><img src="{% static "img/mail.svg" %}"
+                                                 alt=""> {{ czlonkowie_details.email }}</li>
+                                        {% if czlonkowie_details.strona == "brak" %}
+                                            <li><img src="{% static "img/link.svg" %}"
+                                                     alt=""> {{ czlonkowie_details.strona }}</li>
+                                        {% else %}
+                                            <li><img src="{% static "img/link.svg" %}"
+                                                     alt=""><a href="http://{{ czlonkowie_details.strona }}"
+                                                               target="_blank"> Kliknij aby wejść</a></li>
+                                        {% endif %}
+
+                                        {% if czlonkowie_details.facebook == "brak" %}
+                                            <li><img src="{% static "img/facebook.svg" %}"
+                                                     alt=""> {{ czlonkowie_details.facebook }}</li>
+                                        {% else %}
+                                            <li><img src="{% static "img/facebook.svg" %}"
+                                                     alt=""><a href="http://{{ czlonkowie_details.facebook }}"
+                                                               target="_blank"> Kliknij aby wejść</a></li>
+                                        {% endif %}
+
+                                        {% if czlonkowie_details.instagram == "brak" %}
+                                            <li><img src="{% static "img/instagram.svg" %}"
+                                                     alt=""> {{ czlonkowie_details.instagram }}</li>
+                                        {% else %}
+                                            <li><img src="{% static "img/instagram.svg" %}"
+                                                     alt=""><a href="http://{{ czlonkowie_details.instagram }}"
+                                                               target="_blank"> Kliknij aby wejść</a></li>
+                                        {% endif %}
+                                        {% if czlonkowie_details.twitter == "brak" %}
+                                            <li><img src="{% static "img/twitter.svg" %}"
+                                                     alt=""> {{ czlonkowie_details.twitter }}</li>
+                                        {% else %}
+                                            <li><img src="{% static "img/twitter.svg" %}"
+                                                     alt=""><a href="http://{{ czlonkowie_details.twitter }}"
+                                                               target="_blank"> Kliknij aby wejść</a></li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                                <div class="widget quick-links-widget">
+                                    <h3>Czas pracy:</h3>
+                                    <ul>
+                                        <li><a href="#">Poniedziałek:</a></li>
+                                        <li><a href="#">Wtorek:</a></li>
+                                        <li><a href="#">Środa:</a></li>
+                                        <li><a href="#">Czwartek:</a></li>
+                                        <li><a href="#">Piątek:</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="#">{{ czlonkowie_details.poniedzialek }}</a></li>
+                                        <li><a href="#">{{ czlonkowie_details.wtorek }}</a></li>
+                                        <li><a href="#">{{ czlonkowie_details.sroda }}</a></li>
+                                        <li><a href="#">{{ czlonkowie_details.czwartek }}</a></li>
+                                        <li><a href="#">{{ czlonkowie_details.piatek }}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- SEKCJA STOPKA POCZĄTEK -->
+    <div class="stopka" id="stopka">
+        <footer class="footer-top-area-7 pt-80 pb-45">
+
+            <div class="copyright-info-7">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-12 col-sm-12 text-center">
+                            <p>2024 &copy; Wszelkie prawa zastrzeżone <a href="http://golata.eu">IT HELP</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- SEKCJA STOPKA KONIEC -->
+
+{% endblock %}
