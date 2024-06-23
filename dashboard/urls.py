@@ -6,7 +6,7 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    path("dashboard", views.dashboard_rz, name="dashboard"),
+    path("", views.dashboard_rz, name="dashboard"),
     path('aktualnosci/<int:pk>/', views.aktualnosci_details, name='aktualnosci_details'),
     # path("aktualnosci", views.aktualnosci, name="aktualnosci"),
     path("czlonkowie", views.czlonkowie_rz, name="czlonkowie"),
