@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'd9$@lHj]+/0jRcmKq}_rE%W5%dy32/S3my50Zw@4[=:Bfp~0tl'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -90,12 +90,15 @@ USE_TZ = True
 # SECURE_HSTS_SECONDS = 15780000
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_HSTS_PRELOAD = True
+# SECURE_SSL_REDIRECT = True
+
 
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
+
 
 
 STATIC_URL = "static/"
